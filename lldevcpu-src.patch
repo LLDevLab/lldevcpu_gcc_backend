@@ -533,7 +533,7 @@ diff -ruN gcc-releases-gcc-8/gcc/config/lldevcpu/predicates.md gcc-releases-gcc-
 \ No newline at end of file
 diff -ruN gcc-releases-gcc-8/gcc/config.gcc gcc-releases-gcc-8-lldevcpu/gcc/config.gcc
 --- gcc-releases-gcc-8/gcc/config.gcc	2020-04-15 03:17:00.000000000 +0300
-+++ gcc-releases-gcc-8-lldevcpu/gcc/config.gcc	2020-06-10 20:18:04.000000000 +0300
++++ gcc-releases-gcc-8-lldevcpu/gcc/config.gcc	2020-09-03 20:24:36.000000000 +0300
 @@ -349,6 +349,10 @@
  ft32*)	cpu_type=ft32
  	target_has_targetm_common=no
@@ -545,15 +545,12 @@ diff -ruN gcc-releases-gcc-8/gcc/config.gcc gcc-releases-gcc-8-lldevcpu/gcc/conf
  moxie*)	cpu_type=moxie
  	target_has_targetm_common=no
  	;;
-@@ -1330,6 +1334,12 @@
+@@ -1330,6 +1334,9 @@
  	tm_file="${tm_file} dbxelf.h elfos.h moxie/moxiebox.h newlib-stdint.h"
  	tmake_file="${tmake_file} moxie/t-moxiebox"
  	;;
 +lldevcpu-*-*)
-+	gas=yes
-+	gnu_ld=yes
 +	tm_file="dbxelf.h elfos.h newlib-stdint.h ${tm_file}"
-+	tmake_file="${tmake_file} lldevcpu/t-lldevcpu"
 +	;;
  h8300-*-elf*)
  	tmake_file="h8300/t-h8300"
